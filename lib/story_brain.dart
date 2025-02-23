@@ -3,6 +3,9 @@ import 'story.dart';
 
 // Step 5 - Create a new class called StoryBrain.
 class StoryBrain {
+  // Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
+  int _storyNumber = 0;
+
   // Step 7 - Uncomment the lines below to include storyData as a private property in StoryBrain. Hint: You might need to change something in story.dart to make this work.
   List<Story> _storyData = [
     Story(storyTitle: 'Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: "Need a ride, boy?".', choice1: 'I\'ll hop in. Thanks for the help!', choice2: 'Better ask him if he\'s a murderer first.'),
@@ -29,11 +32,13 @@ class StoryBrain {
   String getChoice2() {
     return _storyData[0].choice2;
   }
+
 //TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
-
-//TODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
-
-//TODO: Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
+  // Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
+  void nextStory(int choiceNumber) {
+    _storyNumber = choiceNumber;
+    print("choiceNumber:$choiceNumber");
+  }
 
 //TODO: Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
 
